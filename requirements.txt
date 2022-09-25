@@ -1,0 +1,33 @@
+# FastAPI/Starlette related Dependencies
+fastapi[all]~=0.85.0 # FastAPI framework, high performance, easy to learn, fast to code, ready for production
+starlette~=0.20.4 # Starlette is a lightweight ASGI framework/toolkit, which is ideal for building async web services in Python.
+
+# SQL/DB related Dependencies
+sqlmodel~=0.0.8 # SQLModel, SQL databases in Python, designed for simplicity, compatibility, and robustness.
+sqlalchemy[asyncio]~=1.4.41 # Database Abstraction Library
+sqlalchemy_database~=0.0.7 # SQLAlchemy-Database provides shortcut functions to common database operations for SQLAlchemy ORM
+
+
+# General Dependencies
+autoflake~=1.6.1 # Removes unused imports and unused variables
+flake8~=5.0.4 # modular source code checker: pep8 pyflakes and co
+isort~=5.10.1 # library to sort Python imports.
+mypy~=0.971 # Optional static typing for Python
+orjson~=3.8.0 # Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy
+pydantic~=1.9.2 # Data validation and settings management using python type hints
+setuptools~=65.2.0 # Easily download, build, install, upgrade, and uninstall Python packages
+
+# Documentation related Libraries
+black~=22.8.0 # Code formatter.
+mkdocs~=1.3.1 # Project documentation with Markdown.
+mkdocstrings~=0.19.0 # Automatic documentation from sources, for MkDocs.
+mkdocstrings-python~=0.7.1 # A Python handler for mkdocstrings.
+mkdocs-material~=8.4.4 # Material Design theme for MkDocs
+mkdocs-gen-files~=0.4.0 # MkDocs plugin to programmatically generate documentation pages during the build
+mkdocs-literate-nav~=0.4.1 # MkDocs plugin to specify the navigation in Markdown instead of YAML
+mkdocs-section-index~=0.3.4 # MkDocs plugin to allow clickable sections that lead to an index page
+mkdocs-page-pdf~=0.1.0 # Generate a PDF file for each MkDocs page and adds a download button
+mkdocs-git-revision-date-localized-plugin~=1.1.0
+Pygments~=2.13.0 # generic syntax highlighter
+Markdown~=3.3.7 # implementation of Markdown.
+mdx-include~=1.4.2 # Markdown extension to include local or remote files

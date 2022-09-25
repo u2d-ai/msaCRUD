@@ -1,0 +1,156 @@
+# directory
+docs_dir: docs
+
+# site
+site_name: msaCRUD - Documentation
+site_dir: dist_docs
+site_url: https://msa.u2d.ai/
+
+# Repo
+repo_url: https://github.com/swelcker/msaCRUD
+repo_name: swelcker/msaCRUD
+edit_uri: ""
+
+# Copyright
+copyright: Stefan Welcker, 2022, stefan@u2d.ai
+
+# theme
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      accent: blue
+      primary: white
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      accent: blue
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  logo: 'http://logos.u2d.ai/msaCRUD_logo.png'
+  favicon: 'http://logos.u2d.ai/favicon.png'
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - instant
+    - header.autohide
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+# plugins
+plugins:
+  - search:
+      lang: en
+  - page-to-pdf:
+      displayHeaderFooter: true
+      headerTemplate: "<div style='width:100%;text-align:left;position:relative;top:5mm;left:14mm;font-size:2mm;color:grey;'><span class='title'></span> - (c) 2022 u2d.ai</div>"
+      footerTemplate: "<div style='width:100%;text-align:right;position:relative;top:-10px;right:35px;font-size:2mm;color:grey;'>Page: <span class='pageNumber'></span> of <span class='totalPages'></span></div>"
+  - git-revision-date-localized:
+      type: date
+      custom_format: "%d. %B %Y"
+      timezone: Europe/Amsterdam
+      locale: en
+      fallback_to_build_date: true
+      enable_creation_date: true
+      exclude:
+        - index.md
+      enabled: true
+  - gen-files:
+      scripts:
+        - docs/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - autorefs
+  - section-index
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [msaCRUD]
+          options:
+            show_source: false
+            separate_signature: true
+            show_submodules: true
+            docstring_section_style: spacy
+            show_root_heading: false
+            show_root_members_full_path: false
+            show_object_full_path: false
+            show_category_heading: true
+            show_if_no_docstring: true
+            annotations_path: source
+            show_signature_annotations: true
+            heading_level: 2
+
+# extensions
+markdown_extensions:
+  - admonition
+  - mdx_include
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      auto_title: false
+      anchor_linenums: true
+      linenums: false
+      pygments_lang_class: true
+  - pymdownx.caret
+  - pymdownx.betterem:
+  - attr_list
+  - def_list
+  - tables
+  - abbr
+  - footnotes
+  - md_in_html
+  - extra
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# extras
+extra:
+  analytics:
+    provider: google
+    property: G-06Q4RT8KC2
+
+extra_css:
+  - css/mkdocstrings.css
+
+# navigation
+nav:
+  - Home:
+    - index.md
+    - Usage: usage.md
+    - Used Libraries: requirements.md
+  - Code Reference: reference/
+  - Release notes: release-notes.md
